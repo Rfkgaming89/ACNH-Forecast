@@ -1,34 +1,32 @@
-<?xml version="1.0" encoding="utf-8"?>
+<?xml version="1.0"?>
 <Container version="2">
   <Name>ACNH Forecast</Name>
-  <Repository>rfkgaming89/acnh-forecast:latest</Repository>
-  <Registry>https://hub.docker.com/r/rfkgaming89/acnh-forecast</Registry>
+  <Repository>rfkgaming89/acnh-forecast</Repository>
+  <Registry>https://hub.docker.com/r/rfkgaming89/acnh-forecast/</Registry>
   <Network>bridge</Network>
-  <MyIP/>
-  <Shell>sh</Shell>
   <Privileged>false</Privileged>
   <Support>https://github.com/Rfkgaming89/ACNH-Forecast/issues</Support>
-  <Project>https://github.com/Rfkgaming89/ACNH-Forecast</Project>
-  <Overview>Animal Crossing: New Horizons weather forecast application. This tool provides accurate weather predictions for your island in Animal Crossing: New Horizons.</Overview>
-  <Category>Utility:Games</Category>
-  <WebUI>http://[IP]:[PORT:80]/</WebUI>
-  <TemplateURL>https://github.com/Rfkgaming89/ACNH-Forecast/raw/main/template.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/Rfkgaming89/ACNH-Forecast/main/icon.png</Icon>
-  <ExtraParams/>
-  <PostArgs/>
-  
-  <Config>
-    <Port>
-      <HostPort>12345</HostPort>
-      <ContainerPort>80</ContainerPort>
-      <Protocol>tcp</Protocol>
-      <Description>Web UI Port (external: 12345 → internal: 80)</Description>
-    </Port>
-  </Config>
-  
-  <Config>
-    <Variable Name="PUID" Mode="" Value="99" Description="User ID (usually 99 for nobody)" />
-    <Variable Name="PGID" Mode="" Value="100" Description="Group ID (usually 100 for users)" />
-    <Variable Name="TZ" Mode="" Value="UTC" Description="Timezone (e.g., America/New_York)" />
-  </Config>
+  <Project>https://github.com/Rfkgaming89/ACNH-Forecast/</Project>
+  <Overview>
+    ACNH Forecast is a weather prediction tool for Animal Crossing: New Horizons. 
+    [br][br]
+    Configure the container port, environment variables, and persistent data folder as needed.
+  </Overview>
+  <Category>Tools:</Category>
+  <TemplateURL>https://raw.githubusercontent.com/Rfkgaming89/ACNH-Forecast/main/template.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Rfkgaming89/ACNH-Forecast/main/acnh-forecast.png</Icon>
+
+  <!-- Container Variables -->
+  <Config Name="NGINX_VERSION" Target="NGINX_VERSION" Default="1.25.2" Mode="" Description="Version of Nginx to use. Change if you need a different version." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="PKG_RELEASE" Target="PKG_RELEASE" Default="1" Mode="" Description="Package release number for Nginx. Usually defaults to 1." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="DYNPKG_RELEASE" Target="DYNPKG_RELEASE" Default="1" Mode="" Description="Dynamic package release for Nginx modules." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="NJS_VERSION" Target="NJS_VERSION" Default="0.9.20" Mode="" Description="Version of Nginx JS module (njs)." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="NJS_RELEASE" Target="NJS_RELEASE" Default="1" Mode="" Description="Release number for Nginx JS module." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+  <Config Name="Community_Applications_Conversion" Target="Community_Applications_Conversion" Default="1" Mode="" Description="Internal variable used by Community Applications. Do not change unless instructed." Type="Variable" Display="advanced" Required="false" Mask="false"/>
+
+  <!-- Persistent Volume -->
+  <Config Name="Data" Target="/config" Default="/mnt/user/appdata/acnh-forecast" Mode="rw" Description="Container Path: /config&#13;&#10;Folder to persist ACNH Forecast configuration and data." Type="Path" Display="advanced" Required="false" Mask="false"/>
+
+  <!-- Ports -->
+  <Config Name="Web Port" Target="80" Default="3334" Mode="" Description="HTTP port for ACNH Forecast web interface. Default maps host port 3334 to container port 80." Type="Port" Display="always" Required="true" Mask="false"/>
 </Container>

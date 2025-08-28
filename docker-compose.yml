@@ -1,0 +1,10 @@
+version: "3.8"
+
+services:
+  meteonook:
+    container_name: meteonook
+    build: .
+    image: meteonook:latest
+    restart: unless-stopped
+    ports:
+      - "3334:80"

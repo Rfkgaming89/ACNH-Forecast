@@ -1,0 +1,13 @@
+.git
+.github
+Dockerfile
+.dockerignore
+docker-compose.yml
+template.xml
+README.md
+.env
+.DS_Store
+.idea
+*.log
+logs/
+node_modules/

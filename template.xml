@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Container version="2">
+  <Name>ACNH Forecast</Name>
+  <Repository>rfkgaming89/acnh-forecast:latest</Repository>
+  <Registry>https://hub.docker.com/r/rfkgaming89/acnh-forecast</Registry>
+  <Network>bridge</Network>
+  <MyIP/>
+  <Shell>sh</Shell>
+  <Privileged>false</Privileged>
+  <Support>https://github.com/Rfkgaming89/ACNH-Forecast/issues</Support>
+  <Project>https://github.com/Rfkgaming89/ACNH-Forecast</Project>
+  <Overview>Animal Crossing: New Horizons weather forecast application. This tool provides accurate weather predictions for your island in Animal Crossing: New Horizons.</Overview>
+  <Category>Utility:Games</Category>
+  <WebUI>http://[IP]:[PORT:80]/</WebUI>
+  <TemplateURL>https://github.com/Rfkgaming89/ACNH-Forecast/raw/main/template.xml</TemplateURL>
+  <Icon>https://raw.githubusercontent.com/Rfkgaming89/ACNH-Forecast/main/icon.png</Icon>
+  <ExtraParams/>
+  <PostArgs/>
+  
+  <Config>
+    <Port>
+      <HostPort>12345</HostPort>
+      <ContainerPort>80</ContainerPort>
+      <Protocol>tcp</Protocol>
+      <Description>Web UI Port (external: 12345 → internal: 80)</Description>
+    </Port>
+  </Config>
+  
+  <Config>
+    <Variable Name="PUID" Mode="" Value="99" Description="User ID (usually 99 for nobody)" />
+    <Variable Name="PGID" Mode="" Value="100" Description="Group ID (usually 100 for users)" />
+    <Variable Name="TZ" Mode="" Value="UTC" Description="Timezone (e.g., America/New_York)" />
+  </Config>
+</Container>

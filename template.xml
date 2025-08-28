@@ -14,7 +14,7 @@
   </Overview>
   <Category>Tools:</Category>
   <TemplateURL>https://raw.githubusercontent.com/Rfkgaming89/ACNH-Forecast/main/template.xml</TemplateURL>
-  <Icon>https://raw.githubusercontent.com/Rfkgaming89/ACNH-Forecast/main/acnh-forecast.png</Icon>
+  <Icon>https://raw.githubusercontent.com/Rfkgaming89/ACNH-Forecast/main/acnh-weather.png</Icon>
 
   <!-- Container Variables -->
   <Config Name="NGINX_VERSION" Target="NGINX_VERSION" Default="1.25.2" Mode="" Description="Version of Nginx to use. Change if you need a different version." Type="Variable" Display="advanced" Required="false" Mask="false"/>
